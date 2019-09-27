@@ -2,11 +2,7 @@ header {
     min-width: 100%;
     max-width: 100%;
     min-height: 9em;
+    align-items: center;
     display: flex;
     flex-direction: row;
-    align-items: center;
-}
-
-header .aFe {
-    justify-self: flex-end;
 }
