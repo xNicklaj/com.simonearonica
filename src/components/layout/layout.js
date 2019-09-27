@@ -8,12 +8,7 @@ import Sun from '../../icons/sun'
 import GitHubOriginal from '../../icons/github-original'
 import TwitterOriginal from '../../icons/twitter-original'
 
-import "./layout.css"
-
-const as = {
-  alignSelf: 'auto',
-  color: 'blue'
-}
+import styles from "./layout.module.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,20 +20,19 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
   return (
     <>
-      <div class='bLu'>
+      <div className={styles.yellowBackgroundLayer}>
         <Header>
-          <Sun />
-          <div className='aFe'>
-            <GitHubOriginal />
-            <GitLabOriginal />
-            <TwitterOriginal />
+          <Sun className={styles.icon}/>
+          <div className={styles.actionButtonsDiv}>
+            <GitHubOriginal className={styles.icon} />
+            <GitLabOriginal className={styles.icon}/>
+            <TwitterOriginal className={styles.icon}/>
           </div>
-
         </Header>
       </div>
+      {children}
     </>
   )
 }

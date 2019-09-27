@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Biko Regular";
+    src: url("../fonts/Biko_Regular.otf") format("OpenType")
+}
+
+@font-face {
+    font-family: "Biko Bold";
+    src: url("../fonts/Biko_Bold.otf") format("OpenType")
+}
+
+h1 {
+    font-family: 'Biko Bold';
+    color: #212121
+}
+
+h2, h3, p {
+    font-family: 'Biko Regular';
+    color: #212121
+}
