@@ -1,4 +1,3 @@
-
 .wip {
     display: flex;
     align-items: center;
@@ -9,4 +8,39 @@
 h1 {
     font-size: 50px;
     opacity: .8;
+}
+
+.avatarDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20em;
+}
+
+.avatarDiv img {
+    border-radius: 50%;
+    height: 100%;
+    width: auto;
+}
+
+.textDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 3rem;
+}
+
+.textDiv h2 {
+    margin: .5rem;
+    letter-spacing: .2rem;
+}
+
+.textDiv h2:nth-child(1) {
+    transform: translateX(-6rem)
+}
+
+.textDiv h2:nth-child(2) {
+    transform: translateX(6rem)
 }
