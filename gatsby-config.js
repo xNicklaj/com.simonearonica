@@ -21,8 +21,8 @@ module.exports = {
         name: `Simone Aronica`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#fff`,
+        theme_color: `#F9E96A`,
         display: `minimal-ui`
       },
     },
