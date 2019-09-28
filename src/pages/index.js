@@ -7,6 +7,12 @@ import Heading from '../components/heading/heading'
 import './global.css'
 import styles from './index.module.css'
 import avatar from '../images/avatar.png'
+import Skillcard from "../components/skillcard/skillcard";
+
+import CIcon from '../icons/c-original'
+import CppIcon from '../icons/cpp-original'
+import Html5Icon from '../icons/html5-original'
+import JSIcon from  '../icons/javascript-original'
 
 const IndexPage = () => (
   <Layout>
@@ -20,6 +26,14 @@ const IndexPage = () => (
       <div className={styles.textDiv}>
           <h2>Hello, I'm Simone</h2>
           <h2>I like to develop stuff.</h2>
+      </div>
+      <div className={styles.skillcardWrapper}>
+        <Skillcard style={{minWidth: '40vw', minHeight: '10em', transform: 'translateY(5em)'}}>
+          <CIcon />
+          <CppIcon />
+          <JSIcon />
+          <Html5Icon />
+        </Skillcard>
       </div>
     </Heading>
     <div className={styles.wip}>
