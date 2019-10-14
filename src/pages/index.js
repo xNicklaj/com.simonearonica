@@ -8,11 +8,14 @@ import './global.css'
 import styles from './index.module.css'
 import avatar from '../images/avatar.png'
 import Skillcard from "../components/skillcard/skillcard";
+import Card from '../components/card/card'
 
 import CIcon from '../icons/c-original'
 import CppIcon from '../icons/cpp-original'
 import Html5Icon from '../icons/html5-original'
 import JSIcon from  '../icons/javascript-original'
+
+import { projects } from '../data/projects'
 
 const IndexPage = () => (
   <Layout>
@@ -37,7 +40,31 @@ const IndexPage = () => (
       </div>
     </Heading>
     <div className={styles.wip}>
-      <h1>The more you refresh, the more this website is being developed.</h1>
+      <div>
+        <h1>My Projects</h1>
+      </div>
+      <div className={styles.pjgrid}>
+        {
+          projects.map(project => {
+            let img = require(`../images/${project.thumbnail}`)
+            return (
+              <Card background='#f1f1f1' color='#0c0c0c' key={project.key}>
+                  <img src={img} alt={project.thumbnail} />
+                  <h2>{project.title}</h2>
+                  <p>{project.description}</p>
+                  <span className={styles.divider}></span>
+                  <span className={styles.links}>
+                  {
+                    project.links.map(link => {
+                      return <button key={link.key} onClick={() => window.open(`${link.link}`)} alt={link.title} style={{borderColor:'#fbc02d', color:'#fbc02d'}}>{link.title}</button>
+                    })
+                  }
+                  </span>
+              </Card>
+            )
+          })
+        }
+      </div>
     </div>
   </Layout>
 )
