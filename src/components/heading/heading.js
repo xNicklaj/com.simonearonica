@@ -25,9 +25,9 @@ class Heading extends Component {
           {
             this.state.isDarkThemeEnabled ? <Moon className={styles.icon} onClick={()=> {
                 this.setState({isDarkThemeEnabled: !this.state.isDarkThemeEnabled})
-                localStorage.setItem("useDarkTheme", `${!this.state.isDarkThemeEnabled}`);
+                typeof window !== 'undefined' && localStorage.setItem("useDarkTheme", `${!this.state.isDarkThemeEnabled}`);
               }}/> : <Sun className={styles.icon} onClick={() => {
-                localStorage.setItem("useDarkTheme", `${!this.state.isDarkThemeEnabled}`);
+                typeof window !== 'undefined' && localStorage.setItem("useDarkTheme", `${!this.state.isDarkThemeEnabled}`);
                 this.setState({isDarkThemeEnabled: !this.state.isDarkThemeEnabled})
               }}/>
           }

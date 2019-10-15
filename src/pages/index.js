@@ -18,15 +18,15 @@ import JSIcon from  '../icons/javascript-original'
 import { projects } from '../data/projects'
 
 function e() {
-  if(localStorage.getItem('useDarkTheme') == 'true')
+  if(typeof window !== 'undefined' && localStorage.getItem('useDarkTheme') == 'true')
     return true
   else
     return false
 }
 
 const IndexPage = () => {
-  let isDarkThemeEnabled = localStorage.getItem('useDarkTheme') != null ?  e() : () => {
-    localStorage.setItem("useDarkTheme", false);
+  let isDarkThemeEnabled = typeof window !== 'undefined' && localStorage.getItem('useDarkTheme') != null ?  e() : () => {
+    typeof window !== 'undefined' && localStorage.setItem("useDarkTheme", false);
     return false;
   } 
 
