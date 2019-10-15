@@ -10,10 +10,18 @@
 
 h1 {
     font-family: 'Biko Bold';
-    color: #212121
+    color: #212121;
+    font-display: optional; 
 }
 
 h2, h3, p {
     font-family: 'Biko Regular';
-    color: #212121
+    color: #212121;
+    font-display: optional;
+}
+
+@media (max-width: 450px) {
+    body {
+        overflow-x: hidden;
+    }
 }
