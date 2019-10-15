@@ -69,3 +69,39 @@ h1 {
     flex-direction: row;
     justify-content: space-around
 }
+
+@media (max-width: 450px){
+    .textDiv {
+        font-size: 14px;
+    }
+
+    .textDiv  h2 {
+        margin: .5rem;
+        letter-spacing: .1rem;
+    }
+
+    .textDiv h2:nth-child(1) {
+        transform: translateX(0)
+    }
+    
+    .textDiv h2:nth-child(2) {
+        transform: translateX(0)
+    }
+
+    .pjgrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 3em;
+        grid-column-gap: 3em;
+        width: 95%;
+    }
+
+    .wip {
+        margin: 1em;
+        margin-top: 7em;
+    }
+
+    div h1 {
+        margin: .3em;
+    }
+}
