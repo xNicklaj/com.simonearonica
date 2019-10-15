@@ -17,12 +17,24 @@ import JSIcon from  '../icons/javascript-original'
 
 import { projects } from '../data/projects'
 
-const IndexPage = () => (
-  <Layout>
+function e() {
+  if(localStorage.getItem('useDarkTheme') == 'true')
+    return true
+  else
+    return false
+}
+
+const IndexPage = () => {
+  let isDarkThemeEnabled = localStorage.getItem('useDarkTheme') != null ?  e() : () => {
+    localStorage.setItem("useDarkTheme", false);
+    return false;
+  } 
+
+  return (<Layout>
     <Helmet>
       <title>Home | Simone Aronica</title>
     </Helmet>
-    <Heading>
+    <Heading useDarkTheme={isDarkThemeEnabled}>
       <div className={styles.avatarDiv}>
           <img src={avatar} />
       </div>
@@ -70,6 +82,6 @@ const IndexPage = () => (
       </div>
     </div>
   </Layout>
-)
+)}
 
 export default IndexPage
