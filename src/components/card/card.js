@@ -1,13 +1,14 @@
 import React, { Component} from 'react'
 
-import styles from './card.module.css'
+import styles from './card.module.scss'
+import palettes from './card.palettes.module.scss'
 
 class Card extends Component {
     
 
     render() {
         return (
-            <div className={`${styles.card} ${this.props.className ? this.props.className : ''}`} style={{background: this.props.background || 'green', color: this.props.color || 'white'}}>
+            <div className={`${styles.card} ${palettes.card} ${this.props.className ? this.props.className : ''}`} >
                 {this.props.children}
             </div>
         )

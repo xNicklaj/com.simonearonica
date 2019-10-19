@@ -1,3 +1,4 @@
+@import '../../pages/global.palettes.scss';
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
 .card {
@@ -5,11 +6,10 @@
     margin-top: 10px;
     display: grid;
     grid-template-columns: 1fr;
-    color: white;
     border-radius: 5px;
     max-width: 30vw;
     min-width: 25vw;
-    transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+    transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1), background-color 0.3s cubic-bezier(.25, .8, .25, 1);
     -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);

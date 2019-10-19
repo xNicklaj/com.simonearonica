@@ -1,8 +1,11 @@
+@import './global.palettes.scss';
+
 .wip {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 5em;
+    background-color: $bg-color-light;
 }
 
 .pjgrid {

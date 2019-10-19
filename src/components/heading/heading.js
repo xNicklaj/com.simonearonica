@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import styles from './heading.module.css'
+import styles from './heading.module.scss'
 
 import Header from "../header/header"
 import GitLabOriginal from '../../icons/gitlab-original'
@@ -14,8 +14,10 @@ class Heading extends Component {
     super(props)
 
     this.state = {
-      isDarkThemeEnabled: props.useDarkTheme
+      schemeIcon: window.matchMedia('(prefers-color-scheme: dark)').matches ? <Moon className={styles.icon} /> : <Sun className={styles.icon} />,
     }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(e => this.setState({schemeIcon: e.matches ? <Moon className={styles.icon} /> : <Sun className={styles.icon} />}))
   }
 
   render () {
@@ -23,13 +25,7 @@ class Heading extends Component {
       <div className={styles.yellowBackgroundLayer}>
         <Header>
           {
-            this.state.isDarkThemeEnabled ? <Moon className={styles.icon} onClick={()=> {
-                this.setState({isDarkThemeEnabled: !this.state.isDarkThemeEnabled})
-                typeof window !== 'undefined' && localStorage.setItem("useDarkTheme", `${!this.state.isDarkThemeEnabled}`);
-              }}/> : <Sun className={styles.icon} onClick={() => {
-                typeof window !== 'undefined' && localStorage.setItem("useDarkTheme", `${!this.state.isDarkThemeEnabled}`);
-                this.setState({isDarkThemeEnabled: !this.state.isDarkThemeEnabled})
-              }}/>
+            this.state.schemeIcon
           }
           <div className={styles.actionButtonsDiv}>
             <GitHubOriginal className={styles.icon}/>

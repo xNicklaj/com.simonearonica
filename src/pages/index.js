@@ -4,8 +4,9 @@ import {Helmet} from 'react-helmet'
 import Layout from "../components/layout/layout"
 import Heading from '../components/heading/heading'
 
-import './global.css'
-import styles from './index.module.css'
+import './global.scss'
+import styles from './index.module.scss'
+import palettes from './index.palettes.module.scss'
 import avatar from '../images/avatar.png'
 import Skillcard from "../components/skillcard/skillcard";
 import Card from '../components/card/card'
@@ -17,28 +18,14 @@ import JSIcon from  '../icons/javascript-original'
 
 import { projects } from '../data/projects'
 
-function e() {
-  if(typeof window !== 'undefined' && localStorage.getItem('useDarkTheme') == 'true')
-    return true
-  else
-    return false
-}
-
 const IndexPage = () => {
-  let isDarkThemeEnabled = typeof window !== 'undefined' && localStorage.getItem('useDarkTheme') != null ?  e() : () => {
-    typeof window !== 'undefined' && localStorage.setItem("useDarkTheme", false);
-    return false;
-  } 
-
   return (<Layout>
-    <Helmet>
-      <title>Home | Simone Aronica</title>
-    </Helmet>
-    <Heading useDarkTheme={isDarkThemeEnabled}>
+    <Helmet htmlAttributes={{}} title='Home | Simone Aronica'/>
+    <Heading >
       <div className={styles.avatarDiv}>
           <img src={avatar} />
       </div>
-      <div className={styles.textDiv}>
+      <div className={`${styles.textDiv} ${palettes.textDiv}`}>
           <h2>Hello, I'm Simone</h2>
           <h2>I like to develop stuff.</h2>
       </div>
@@ -51,7 +38,7 @@ const IndexPage = () => {
         </Skillcard>
       </div>
     </Heading>
-    <div className={styles.wip}>
+    <div className={`${styles.wip} ${palettes.wip}`}>
       <div>
         <h1>My Projects</h1>
       </div>

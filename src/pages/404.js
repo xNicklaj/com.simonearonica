@@ -2,9 +2,9 @@ import React from "react"
 import {Helmet} from 'react-helmet'
 
 import Layout from "../components/layout/layout"
-import styles from './404.module.css'
+import styles from './404.module.scss'
 
-import './global.css'
+import './global.scss'
 
 const NotFoundPage = () => (
   <Layout>
