@@ -14,10 +14,10 @@ class Heading extends Component {
     super(props)
 
     this.state = {
-      schemeIcon: window.matchMedia('(prefers-color-scheme: dark)').matches ? <Moon className={styles.icon} /> : <Sun className={styles.icon} />,
+      schemeIcon: typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches ? <Moon className={styles.icon} /> : <Sun className={styles.icon} />,
     }
 
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(e => this.setState({schemeIcon: e.matches ? <Moon className={styles.icon} /> : <Sun className={styles.icon} />}))
+    typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').addListener(e => this.setState({schemeIcon: e.matches ? <Moon className={styles.icon} /> : <Sun className={styles.icon} />}))
   }
 
   render () {
