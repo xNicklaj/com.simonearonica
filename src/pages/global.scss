@@ -1,3 +1,5 @@
+@import './global.palettes.scss';
+
 @font-face {
     font-family: "Biko Regular";
     src: url("../fonts/Biko_Regular.otf") format("OpenType")
@@ -10,13 +12,13 @@
 
 h1 {
     font-family: 'Biko Bold';
-    color: #212121;
+    color: $text-color-light;
     font-display: optional; 
 }
 
 h2, h3, p {
     font-family: 'Biko Regular';
-    color: #212121;
+    color: $text-color-light;
     font-display: optional;
 }
 

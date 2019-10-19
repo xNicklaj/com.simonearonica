@@ -1,0 +1,21 @@
+@import '../../pages/global.palettes.scss';
+
+.card {
+    background-color: $bg-color-light;
+}
+
+@media (prefers-color-scheme: light) {
+    .card {
+        background-color: $bg-color-light;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .card {
+        background-color: $bg-color-dark-elevated-1dp;
+    }
+
+    .card:hover {
+        background-color: $bg-color-dark-elevated-8dp;
+    }
+}

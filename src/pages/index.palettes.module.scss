@@ -1,0 +1,17 @@
+@import './global.palettes.scss';
+
+.textDiv h2{
+    color: $text-color-light;
+}
+
+@media (prefers-color-scheme: light) {
+    .wip {
+        background: $bg-color-light;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .wip {
+        background: $bg-color-dark;
+    }
+}
