@@ -8,6 +8,7 @@ import './global.scss'
 import styles from './index.module.scss'
 import palettes from './index.palettes.module.scss'
 import avatar from '../images/avatar.png'
+import fullBody from '../images/avatar-full-body.png'
 import Skillcard from "../components/skillcard/skillcard";
 import Card from '../components/card/card'
 
@@ -23,7 +24,7 @@ const IndexPage = () => {
     <Helmet htmlAttributes={{}} title='Home | Simone Aronica'/>
     <Heading >
       <div className={styles.avatarDiv}>
-          <img src={avatar} />
+          <img src={avatar} alt='avatar.png'/>
       </div>
       <div className={`${styles.textDiv} ${palettes.textDiv}`}>
           <h2>Hello, I'm Simone</h2>
@@ -47,7 +48,7 @@ const IndexPage = () => {
           projects.map(project => {
             let img = require(`../images/${project.thumbnail}`)
             return (
-              <Card background='#f1f1f1' color='#0c0c0c' key={project.key}>
+              <Card key={project.key}>
                   <img src={img} alt={project.thumbnail} />
                   <h2>{project.title}</h2>
                   <p>{project.description}</p>
@@ -66,6 +67,32 @@ const IndexPage = () => {
       </div>
       <div>
         <h1>About me</h1>
+      </div>
+      <div className={styles.aboutMe}>
+          <Card>
+            <img src={fullBody} alt='avatar-full-body.png' style={{backgroundColor: '#F9E96A'}}/>
+            <h2>Simone</h2>
+            <p>
+              Born in Palermo, I’ve always loved progress and everything that is scientific.<br/>
+              <br/>
+              I attended an High School in Palermo that gave me some basics on Computer Science and since then I’ve always studied on my own.<br/>
+              <br/>
+              Right now Working on Web Development!
+            </p>
+          </Card>
+          <div>
+            <ul className={styles.timeline + ' ' + palettes.timeline}>
+              <li>
+                <h1>I.T.I. Ettore Majorana</h1>
+                <p>
+                  I attended my high school period in a computer science oriented public institute, where I've been taught notions of C, Java, XHTML, CSS, JSP and MySql.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div>
+
+          </div>
       </div>
     </div>
   </Layout>
