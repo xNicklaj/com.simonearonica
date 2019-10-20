@@ -45,8 +45,9 @@
 }
 
 .card img {
-    height: 16em;
-    max-width: 100%;
+    min-height: 18em;
+    max-height: 18em;
+    width: 100%;
     object-fit: cover;
     justify-self: center;
     order: 1;
