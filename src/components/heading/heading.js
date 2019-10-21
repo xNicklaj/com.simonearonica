@@ -31,9 +31,9 @@ class Heading extends Component {
             this.state.schemeIcon
           }
           <div className={styles.actionButtonsDiv}>
-            <GitHubOriginal className={styles.icon}/>
-            <GitLabOriginal className={styles.icon}/>
-            <TwitterOriginal className={styles.icon}/>
+            <GitHubOriginal className={styles.icon} onClick={() => window.open('https://www.github.com/xNicklaj')}/>
+            <GitLabOriginal className={styles.icon} onClick={() => window.open('https://www.gitlab.com/xNicklaj')}/>
+            <TwitterOriginal className={styles.icon} onClick={() => window.open('https://www.twitter.com/xNicklaj')}/>
           </div>
         </Header>
         {this.props.children}
