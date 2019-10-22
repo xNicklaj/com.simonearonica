@@ -14,31 +14,20 @@ class SkillCard extends Component {
         }
     }
 
-    fetchData = () => {
-        let state = {
-            items: [...this.state.items, this.props.children]
-        }
-        this.setState(state)
-        console.log('updated')
+    componentDidMount() {
+        this.refs.iconWrapper.scrollLeft = (96*(this.props.children.length - 1) + 80 - this.refs.iconWrapper.clientWidth) / 2
     }
-
 
     render() {
         let i = 0;
         return (
-            <div className={styles.card + ' ' + (this.props.className ? this.props.className : '') + ' ' + palettes.card} style={this.props.style}>
-                <InfiniteScroll 
-                    dataLength={this.state.items.lenght} 
-                    className={styles.iconWrapper} 
-                    hasMore={true} 
-                    next={this.fetchData}
-                    loader={<h4>Loading...</h4>}
-                    endMessage={<h4>End</h4>}
-                    >
-                    {
-                        this.state.items.map(child => <div key={i++} className={styles.item}>{child}</div>)
-                    }
-                </InfiniteScroll>
+            <div className={styles.card + ' ' + (this.props.className ? this.props.className : '') + ' ' + palettes.card} ref='skillcard' style={this.props.style}>
+                <div className={styles.iconWrapper} ref='iconWrapper'>
+                {
+                    this.state.items.map(child => <div key={i++} className={styles.item}>{child}</div>)
+                }
+                </div>
+                
             </div>
         )
     }
