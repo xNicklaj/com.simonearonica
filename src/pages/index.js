@@ -1,5 +1,6 @@
 import React from "react"
 import {Helmet} from 'react-helmet'
+import InfiniteScroll from 'react-infinite-scroll-component'
 
 import Layout from "../components/layout/layout"
 import Heading from '../components/heading/heading'
@@ -16,10 +17,19 @@ import CIcon from '../icons/c-original'
 import CppIcon from '../icons/cpp-original'
 import Html5Icon from '../icons/html5-original'
 import JSIcon from  '../icons/javascript-original'
+import ReactIcon from '../icons/react-original'
 
 import { projects } from '../data/projects'
+import GitLabOriginal from "../icons/gitlab-original"
 
 const IndexPage = () => {
+  const skills = [
+    <CIcon />,
+    <CppIcon />,
+    <JSIcon />,
+    <ReactIcon />,
+  ]
+
   return (<Layout>
     <Helmet htmlAttributes={{}} title='Home | Simone Aronica'/>
     <Heading >
@@ -31,11 +41,10 @@ const IndexPage = () => {
           <h2>I like to develop stuff.</h2>
       </div>
       <div className={styles.skillcardWrapper}>
-        <Skillcard style={{minWidth: '40vw', minHeight: '10em', transform: 'translateY(5em)'}}>
-          <CIcon />
-          <CppIcon />
-          <JSIcon />
-          <Html5Icon />
+        <Skillcard style={{transform: 'translateY(5em)'}} dataLenght={skills.length}>
+          {
+            skills
+          }
         </Skillcard>
       </div>
     </Heading>
