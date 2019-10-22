@@ -1,6 +1,5 @@
 import React from "react"
 import {Helmet} from 'react-helmet'
-import InfiniteScroll from 'react-infinite-scroll-component'
 
 import Layout from "../components/layout/layout"
 import Heading from '../components/heading/heading'
@@ -14,20 +13,25 @@ import Skillcard from "../components/skillcard/skillcard";
 import Card from '../components/card/card'
 
 import CIcon from '../icons/c-original'
+import CSS3Icon from '../icons/css3-original'
 import CppIcon from '../icons/cpp-original'
 import Html5Icon from '../icons/html5-original'
 import JSIcon from  '../icons/javascript-original'
 import ReactIcon from '../icons/react-original'
+import JavaIcon from '../icons/java-original'
 
 import { projects } from '../data/projects'
 import GitLabOriginal from "../icons/gitlab-original"
 
 const IndexPage = () => {
   const skills = [
-    <CIcon />,
-    <CppIcon />,
-    <JSIcon />,
-    <ReactIcon />,
+    <CIcon key={0}/>,
+    <CppIcon key={1} />,
+    <Html5Icon key={2}/>,
+    <CSS3Icon key={3}/>,
+    <JSIcon key={4}/>,
+    <ReactIcon key={5}/>,
+    <JavaIcon key={6} />
   ]
 
   return (<Layout>

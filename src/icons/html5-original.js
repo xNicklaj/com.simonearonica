@@ -12,3 +12,4 @@ const Html5Icon = (props) => (
 )
 
 export default Html5Icon
+
