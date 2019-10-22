@@ -2,6 +2,9 @@
     padding: 16px;
     overflow: hidden;
     border-radius: 5px;
+    
+    width: 100%;
+    min-height: 10em;
     transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1), background-color 0.3s cubic-bezier(.25, .8, .25, 1);
     -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -16,10 +19,14 @@
 
 .iconWrapper {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    overflow-x: auto;
+}
+
+.iconWrapper::-webkit-scrollbar {
+    display: none;
 }
 
 .item {
     width: 10em;
+    margin: 0;
 }
