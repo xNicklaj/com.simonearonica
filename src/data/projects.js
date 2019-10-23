@@ -30,7 +30,26 @@ const projectHistory = (
                     "link": "https://github.com/xNicklaj/Home-assistant"
                 }
             ]  
+        },
+        {
+            "key": 2,
+            "thumbnail": "MinIRC.jpg",
+            "title": "minIRC",
+            "description": "An IRC written in Java, composed by both client and server.",
+            "links": [
+                {
+                    "key": 0,
+                    "title": "View server",
+                    "link": "https://github.com/xNicklaj/minIRC---server"
+                },
+                {
+                    "key": 1,
+                    "title": "View client",
+                    "link": "https://github.com/xNicklaj/minIRC"
+                }
+            ]  
         }
+
     ]
 )
 
