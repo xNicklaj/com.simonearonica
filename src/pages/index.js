@@ -45,7 +45,7 @@ const IndexPage = () => {
           <h2>I like to develop stuff.</h2>
       </div>
       <div className={styles.skillcardWrapper}>
-        <Skillcard style={{transform: 'translateY(5em)'}} dataLenght={skills.length}>
+        <Skillcard style={{transform: 'translateY(5em)'}} speed={3}>
           {
             skills
           }

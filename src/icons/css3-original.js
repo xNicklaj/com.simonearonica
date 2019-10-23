@@ -2,7 +2,7 @@ import React from 'react'
 
 const CSS3Icon = (props) => (
     
-<svg onClick={props.onClick} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 105" width="80" height="80" style={props.style}>
+<svg onClick={props.onClick} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 105" width="96" height="80" style={props.style}>
     <path d="M15.4335 93.6165L7.18604 1.10905H97.8142L89.5585 93.6026L52.4451 103.892L15.4335 93.6165Z" fill="#1572B6"/>
     <path d="M52.5007 96.0274L82.4905 87.7127L89.5461 8.67234H52.5007V96.0274Z" fill="#33A9DC"/>
     <path d="M52.5007 42.1879H67.5141L68.551 30.5698H52.5007V19.224H80.9508L80.6785 22.2682L77.8894 53.5336H52.5007V42.1879Z" fill="white"/>
