@@ -83,7 +83,7 @@ const IndexPage = () => {
       </div>
       <div className={styles.aboutMe}>
           <Card>
-            <img src={fullBody} alt='avatar-full-body.png' style={{backgroundColor: '#F9E96A'}}/>
+            <img src={fullBody} alt='avatar-full-body.png' />
             <h2>Simone</h2>
             <p>
               Born in Palermo, I’ve always loved progress and everything that is scientific.<br/>
