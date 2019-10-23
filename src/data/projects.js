@@ -38,7 +38,7 @@ const projectHistory = (
             "description": "An IRC written in Java, composed by both client and server.",
             "links": [
                 {
-                    "key": o,
+                    "key": 0,
                     "title": "View server",
                     "link": "https://github.com/xNicklaj/minIRC---server"
                 },
