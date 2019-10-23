@@ -33,7 +33,7 @@ const projectHistory = (
         },
         {
             "key": 2,
-            "thumbnail": "Home.jpg",
+            "thumbnail": "MinIRC.jpg",
             "title": "minIRC",
             "description": "An IRC written in Java, composed by both client and server.",
             "links": [
