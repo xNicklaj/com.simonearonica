@@ -3,6 +3,7 @@ import {Helmet} from 'react-helmet'
 
 import Layout from "../components/layout/layout"
 import Heading from '../components/heading/heading'
+import SEO from '../components/seo/seo'
 
 import './global.scss'
 import styles from './index.module.scss'
@@ -35,7 +36,8 @@ const IndexPage = () => {
   ]
 
   return (<Layout>
-    <Helmet htmlAttributes={{}} title='Home | Simone Aronica'/>
+    <Helmet htmlAttributes={{}} title='Home' />
+    <SEO />
     <Heading >
       <div className={styles.avatarDiv}>
           <img src={avatar} alt='avatar.png'/>
