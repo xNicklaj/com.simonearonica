@@ -33,7 +33,7 @@ class Heading extends Component {
           <div className={styles.actionButtonsDiv}>
             <GitHubOriginal className={styles.icon} onClick={() => window.open('https://www.github.com/xNicklaj')}/>
             <GitLabOriginal className={styles.icon} onClick={() => window.open('https://www.gitlab.com/xNicklaj')}/>
-            <TwitterOriginal className={styles.icon} onClick={() => window.open('https://www.twitter.com/xNicklaj')}/>
+            <TwitterOriginal className={styles.icon} onClick={() => window.open('https://www.twitter.com/ItsSimonDev')}/>
           </div>
         </Header>
         {this.props.children}
