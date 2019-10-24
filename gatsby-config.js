@@ -1,8 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Simone Aronica`,
-    description: `This is a web portfolio. Hi, I'm Simone Aronica and I'm your next-home junior developer.`,
+    title: `Home`,
+    description: `This is a web portfolio. Hi, I'm Simone Aronica and I'm your friendly neighbourhood junior developer.`,
     author: `Simone Aronica`,
+    twitterUsername: '@itssimondev',
+    titleTemplate: '%s | Simone Aronica',
+    url: 'https://simonearonica.com',
+    image: '/images/seo.jpg'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
