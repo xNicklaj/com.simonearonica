@@ -45,7 +45,7 @@ class SkillCard extends Component {
                 this.startPosition = this.refs.iconWrapper.scrollLeft
                 return
             }
-            if(this.startPosition + this.refs.iconWrapper.scrollLeft < 96)
+            if(this.startPosition + this.refs.iconWrapper.scrollLeft < 24)
             {
                 return
             }
@@ -63,7 +63,7 @@ class SkillCard extends Component {
                 this.startPosition = this.refs.iconWrapper.scrollLeft
                 return
             }
-            if(this.startPosition - this.refs.iconWrapper.scrollLeft < 96)
+            if(this.startPosition - this.refs.iconWrapper.scrollLeft < 24)
             {
                 return
             }
