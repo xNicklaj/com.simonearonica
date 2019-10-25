@@ -15,6 +15,15 @@ body {
         background: $bg-color-light;
     }
 
+   body::-webkit-scrollbar-track {
+       background: #e0e0e0;
+   }
+
+   body::-webkit-scrollbar-thumb {
+       background: $bg-color-light;
+       box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   }
+
     h1, h2, h3, p {
         color: $text-color-light;
     }
@@ -22,8 +31,15 @@ body {
 
 @media (prefers-color-scheme: dark) {
     body {
-        
         background: $bg-color-dark;
+    }
+
+    body::-webkit-scrollbar-track {
+        background: $bg-color-dark-elevated-1dp;
+    }
+    
+    body::-webkit-scrollbar-thumb {
+        background: $bg-color-dark-elevated-8dp;
     }
 
     h1, h2, h3, p {

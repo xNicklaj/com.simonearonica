@@ -10,6 +10,14 @@
     src: url("../fonts/Biko_Bold.otf") format("OpenType")
 }
 
+body::-webkit-scrollbar {
+    width: 1em;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 1em;
+}
+
 h1 {
     font-family: 'Biko Bold';
     color: $text-color-light;
