@@ -40,7 +40,7 @@ const IndexPage = () => {
       <meta property='og:title' content='Simone Aronica | Developer Portfolio'/>
       <meta property='og:type' content='website' />
       <meta property='og:site_name' content='Simone Aronica' />
-      <meta property='og:description' content='This is a web portfolio. Hi, I\'m Simone Aronica and I\'m your friendly neighbourhood junior developer.' />
+      <meta property='og:description' content="This is a web portfolio. Hi, I'm Simone Aronica and I'm your friendly neighbourhood junior developer." />
     </Helmet>
     <SEO />
     <Heading >
