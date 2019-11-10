@@ -36,7 +36,12 @@ const IndexPage = () => {
   ]
 
   return (<Layout>
-    <Helmet htmlAttributes={{}} title='Home' />
+    <Helmet htmlAttributes={{}} title='Home'>
+      <meta property='og:title' content='Simone Aronica | Developer Portfolio'/>
+      <meta property='og:type' content='website' />
+      <meta property='og:site_name' content='Simone Aronica' />
+      <meta property='og:description' content='This is a web portfolio. Hi, I\'m Simone Aronica and I\'m your friendly neighbourhood junior developer.' />
+    </Helmet>
     <SEO />
     <Heading >
       <div className={styles.avatarDiv}>
