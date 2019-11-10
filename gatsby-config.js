@@ -31,7 +31,14 @@ module.exports = {
         icon: 'src/favicon.png'
       },
     },
-    'gatsby-plugin-sass'
+    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.simonearonica.com',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
