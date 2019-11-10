@@ -5,7 +5,8 @@ module.exports = {
     author: `Simone Aronica`,
     twitterUsername: '@itssimondev',
     titleTemplate: '%s | Simone Aronica',
-    url: 'https://simonearonica.com',
+    url: 'https://www.simonearonica.com',
+    siteUrl: 'https://www.simonearonica.com',
     image: '/images/seo.jpg'
   },
   plugins: [
@@ -23,7 +24,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Simone Aronica`,
-        short_name: `starter`,
+        short_name: `Portfolio`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#F9E96A`,
@@ -32,6 +33,15 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.simonearonica.com',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
+    'gatsby-plugin-sitemap'
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
