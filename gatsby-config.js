@@ -28,7 +28,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#F9E96A`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: 'src/favicon.png'
       },
     },
@@ -40,8 +40,8 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
-    'gatsby-plugin-sitemap'
-
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-offline'
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
