@@ -20,6 +20,7 @@ import Html5Icon from '../icons/html5-original'
 import JSIcon from  '../icons/javascript-original'
 import ReactIcon from '../icons/react-original'
 import JavaIcon from '../icons/java-original'
+import PhpIcon from '../icons/php'
 
 import { projects } from '../data/projects'
 import GitLabOriginal from "../icons/gitlab-original"
@@ -31,8 +32,9 @@ const IndexPage = () => {
     <Html5Icon key={2}/>,
     <CSS3Icon key={3}/>,
     <JSIcon key={4}/>,
-    <ReactIcon key={5}/>,
-    <JavaIcon key={6} />
+    <PhpIcon key={5} />,
+    <ReactIcon key={6}/>,
+    <JavaIcon key={7} />
   ]
 
   return (<Layout>
@@ -106,7 +108,13 @@ const IndexPage = () => {
               <li>
                 <h1>I.T.I. Ettore Majorana</h1>
                 <p>
-                  I attended my high school period in a computer science oriented public institute, where I've been taught notions of C, Java, XHTML, CSS, JSP and MySql.
+                  I attended my high school period in a computer science oriented public institute, where I've been taught notions of C, Java, HTML5, CSS, PHP and MySql.
+                </p>
+              </li>
+              <li>
+                <h1>Politecnico di Torino</h1>
+                <p>
+                  I will attend the Politecnico di Torino starting October 2020 to get a degree in Computer Engineering.
                 </p>
               </li>
             </ul>
