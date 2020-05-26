@@ -8,6 +8,7 @@ import Sun from '../../icons/sun'
 import Moon from '../../icons/moon'
 import GitHubOriginal from '../../icons/github-original'
 import TwitterOriginal from '../../icons/twitter-original'
+import GMailIcon from '../../icons/gmail.js'
 
 class Heading extends Component {
   constructor (props) {
@@ -31,6 +32,7 @@ class Heading extends Component {
             this.state.schemeIcon
           }
           <div className={styles.actionButtonsDiv}>
+            <GMailIcon className={styles.icon} onClick={() => window.open('mailto:simonearonica@gmail.com')}/>
             <GitHubOriginal className={styles.icon} onClick={() => window.open('https://www.github.com/xNicklaj')}/>
             <GitLabOriginal className={styles.icon} onClick={() => window.open('https://www.gitlab.com/xNicklaj')}/>
             <TwitterOriginal className={styles.icon} onClick={() => window.open('https://www.twitter.com/ItsSimonDev')}/>
