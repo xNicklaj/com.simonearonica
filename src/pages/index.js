@@ -100,7 +100,7 @@ const IndexPage = () => {
               <br/>
               I attended an High School in Palermo that gave me some basics on Computer Science and since then I’ve always studied on my own.<br/>
               <br/>
-              Right now Working on Web Development!
+              Starting from October 2020 I plan on moving to Turin and frequent the Politecnico di Torino.
             </p>
           </Card>
           <div>
