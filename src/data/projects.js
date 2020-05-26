@@ -4,17 +4,12 @@ const projectHistory = (
             "key": 0,
             "thumbnail": "th01.png",
             "title": "majorana website",
-            "description": "This is the website of my high school. It’s built in ReactJS and SCSS.",
+            "description": "This is the website of my high school. It’s built on the Joomla Framework using PHP and CSS3.",
             "links": [
                 {
                     "key": 0,
                     "title": "View hosted",
-                    "link": "https://parodux-majoranapa.netlify.com"
-                },
-                {
-                    "key": 1,
-                    "title": "View source",
-                    "link": "https://gitlab.com/xNicklaj/parodux.majoranapa"
+                    "link": "http://sitelab.ceformedsrl.it/5F_ARONICA_SIMONE/index.php"
                 }
             ]
         },
