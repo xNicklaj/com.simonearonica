@@ -6,7 +6,7 @@ const isDevelopment = process.env.MODE == 'production' ? false : true;
 module.exports = {
   target: "web",
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'public'),
     publicPath: '/'
   },
   module: {
