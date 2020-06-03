@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "Biko Regular";
+    src: url("./fonts/Biko_Regular.otf") format("OpenType")
+}
+
+@font-face {
+    font-family: "Biko Bold";
+    src: url("./fonts/Biko_Bold.otf") format("OpenType")
+}
+
+html, body {
+    margin: 0;
+    max-width: 100vw;
+}
+
+:root {
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media only screen and (max-width: 768px) {
+
+}

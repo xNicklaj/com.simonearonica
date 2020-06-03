@@ -1,0 +1,151 @@
+@import '../../global.scss';
+
+.iconlist {
+    list-style: none;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0 -10px;
+}
+
+.iconlist li {
+    padding: 0;
+    align-self: center;
+    justify-self: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.header {
+    padding: 16px;
+}
+
+.header main h1 {
+    color: $text-color-light;
+    align-self: center;
+}
+
+.header main {
+    display: flex;
+    flex-direction: column
+}
+
+.header main h1:nth-child(1) {
+    margin-bottom: 2px;
+}
+
+.header main h1:nth-child(2) {
+    margin-top: 2px;
+}
+
+.main {
+    display: grid;
+    grid-auto-flow: row;
+    margin: 16px 0 16px 0;
+}
+
+.skillList {
+    display: grid;
+    row-gap: 4px;
+    list-style: none;
+    align-items: center;
+    justify-items: center;
+}
+
+.skillList li {
+    border-radius: 5px 10px;
+    display: flex;
+    padding: 4px;
+    @include box-shadow-transparent;
+    @include box-shadow-transition-only;
+}
+
+.skillList li svg {
+    align-self: center;
+}
+
+.skillList li:hover {
+    @include box-shadow-idle;
+}
+
+.card {
+    max-width: 95vw;
+}
+
+section h1 {
+    padding-left: 32px;
+    font-size: 32px;
+}
+
+section .projects {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 16px;
+    column-gap: 16px;
+    list-style: none;
+}
+
+.MDCard {
+    align-self: start;
+}
+
+.about {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px 0 16px;
+}
+
+@media only screen and (min-width: 992px) {
+    section .projects {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-flow: column;
+    }
+
+    .about {
+        justify-content: center;
+    }
+
+    .card {
+        max-width: 35vw;
+    }
+
+    .skillList {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        row-gap: 16px;
+    }
+
+    .timeline {
+        max-width: 30vw;
+        margin-left: 32px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    
+    .header main h1 {
+        font-size: 21px;
+    }
+
+    section .projects {
+        padding: 0 16px 0 16px;
+    }
+
+    .skillList {
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 0 16px 0 16px;
+        row-gap: 8px;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about li {
+        max-width: 100%;
+    }
+
+    .timeline {
+        margin-top: 16px;
+    }
+}

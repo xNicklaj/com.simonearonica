@@ -1,0 +1,9 @@
+@import '../../global.palettes.scss';
+
+.IDCard {
+    background: $bg-color-light
+}
+
+.IDCard *{
+    color: $text-color-light;
+}

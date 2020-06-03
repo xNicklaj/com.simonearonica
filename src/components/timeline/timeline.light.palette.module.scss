@@ -1,0 +1,11 @@
+@import '../../global.palettes.scss';
+
+.timeline {
+    color: $text-color-light;
+    border-left: 8px solid $accent-color;
+}
+
+.timeline li:after {
+    background: $bg-color-light;
+    box-shadow: 0 0 0 8px $accent-color;
+}

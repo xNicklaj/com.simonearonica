@@ -1,0 +1,13 @@
+@import '../../global.palettes.scss';
+
+.header {
+    background-color: $accent-color;
+}
+
+.main {
+    background-color: $bg-color-light;
+}
+
+section h1 {
+    color: $text-color-light;
+}

@@ -1,0 +1,99 @@
+@import "../../global.scss";
+
+@mixin face {
+    backface-visibility: hidden;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.IDCard {
+    border-radius: 15px;
+    transform-style: preserve-3d;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    @include box-shadow-idle;
+    cursor: pointer;
+}
+
+.IDCard:hover {
+    @include box-shadow-hover;
+}
+
+.deck {
+    perspective: 1000px;
+    justify-self: center;
+}
+
+.cardFront {
+    @include face;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.cardBack {
+    @include face;
+    transform: rotateY(180deg);
+    padding: 16px;
+}
+
+.cardFront h2 {
+    align-self: center;
+    margin: 0;
+    padding-bottom: 4px;
+}
+
+.cardFront p {
+    text-align: end;
+    padding-top: 8px;
+    margin: 0;
+}
+
+.IDCardcontent {
+    display: flex;
+    max-width: calc(100% - 32px);
+}
+
+.IDCardcontent img {
+    max-width: 15rem;
+    margin: 0 4px 0 0;
+    border-radius: 8px;
+}
+
+.IDCardcontent .info {
+    display: grid;
+    margin: 0 0 0 4px;
+}
+
+.IDCardcontent .info div span {
+    display: flex;
+    align-items: center;
+    background: transparent;
+}
+
+.IDCardcontent .info div div {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-right: 10px;
+}
+
+.IDCardcontent .info div {
+    max-width: 100%;
+    display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+    .IDCardcontent img {
+        display: block;
+        width: 50%;
+        height: 50%;
+        border-radius: 8px;
+    }
+
+    .IDCardcontent .info div {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,24 @@
+@import '../../global.palettes.scss';
+
+.timeline {
+    color: $text-color-dark;
+    background: $bg-color-dark-elevated-1dp;
+    border-left: 8px solid $accent-color;
+}
+
+.timeline:hover {
+    background: $bg-color-dark-elevated-8dp;
+}
+
+.timeline:hover li{
+    background: $bg-color-dark-elevated-8dp;
+}
+
+.timeline li{
+    background: $bg-color-dark-elevated-1dp;
+}
+
+.timeline li:after {
+    background: $bg-color-dark;
+    box-shadow: 0 0 0 8px $accent-color;
+}

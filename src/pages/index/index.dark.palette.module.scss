@@ -1,0 +1,22 @@
+@import '../../global.palettes.scss';
+
+.header {
+    background-color: $accent-color;
+}
+
+.main {
+    background-color: $bg-color-dark;
+}
+
+.skillList li {
+    background-color: $bg-color-dark;
+    transition: background-color 300ms;
+}
+
+.skillList li:hover {
+    background-color: $bg-color-dark-elevated-8dp;
+}
+
+section h1 {
+    color: $text-color-dark;
+}
