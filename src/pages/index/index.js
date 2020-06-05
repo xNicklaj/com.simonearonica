@@ -115,23 +115,23 @@ export const IndexPage = () => {
           {
             content.projects.map(elem => {
               return <li key={elem.key} >
-              <MDCard 
-                media={elem.thumbnail ? images[`${elem.thumbnail}`.toString()].default : ''}
-                title={elem.title}
-                accentColor={palettes.accentcolor}
-                className={style.MDCard}
-                dark={theme == 'dark' ? true : false}
-                actions={elem.links.map(link => {
-                return {
-                  title: link.title,
-                  onClick: () => openLink(link.link),
-                  key: link.key
-                };
-                })}
-              >
-                <MDCardSection>{elem.description}</MDCardSection>
-                <MDDivider primaryColor={palettes.textColorDark} fullWidth/>
-              </MDCard>;
+                <MDCard 
+                  media={elem.thumbnail ? images[`${elem.thumbnail}`.toString()].default : ''}
+                  title={elem.title}
+                  accentColor={palettes.accentcolor}
+                  className={style.MDCard}
+                  dark={theme == 'dark' ? true : false}
+                  actions={elem.links.map(link => {
+                  return {
+                    title: link.title,
+                    onClick: () => openLink(link.link),
+                    key: link.key
+                  };
+                  })}
+                >
+                  <MDCardSection>{elem.description}</MDCardSection>
+                  <MDDivider primaryColor={palettes.textColorDark} fullWidth/>
+                </MDCard>
               </li>
             })
           }
