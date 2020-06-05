@@ -39,7 +39,7 @@ const projects = (
           "key": 0,
           "thumbnail": "th01.png",
           "title": "majorana website",
-          "sections": "This is the website of my high school. It’s built on the Joomla Framework using PHP and CSS3. The website will be available on https://majoranapa.edu.it starting from September 2020.",
+          "description": "This is the website of my high school. It’s built on the Joomla Framework using PHP and CSS3. The website will be available on https://majoranapa.edu.it starting from September 2020.",
           "links": [
               {
                   "key": 0,
@@ -52,7 +52,7 @@ const projects = (
           "key": 1,
           "thumbnail": "Home.jpg",
           "title": "home assistant",
-          "sections": "This is an Home Assistant project built in Java.",
+          "description": "This is an Home Assistant project built in Java.",
           "links": [
               {
                   "key": 0,
@@ -65,7 +65,7 @@ const projects = (
           "key": 2,
           "thumbnail": "MinIRC.jpg",
           "title": "minIRC",
-          "sections": "An IRC written in Java and JavaFX, composed by both client and server. This started as a school project, but soon developed way out of its purpose.",
+          "description": "An IRC written in Java and JavaFX, composed by both client and server. This started as a school project, but soon developed way out of its purpose.",
           "links": [
               {
                   "key": 0,
