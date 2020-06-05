@@ -1,11 +1,13 @@
 @font-face {
     font-family: "Biko Regular";
-    src: url("./fonts/Biko_Regular.otf") format("OpenType")
+    src: url("./fonts/Biko_Regular.otf") format("OpenType");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Biko Bold";
-    src: url("./fonts/Biko_Bold.otf") format("OpenType")
+    src: url("./fonts/Biko_Bold.otf") format("OpenType");
+    font-display: swap;
 }
 
 html, body {

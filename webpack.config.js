@@ -1,5 +1,9 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
+const WorkboxPlugin = require('workbox-webpack-plugin');
+const ImageminPlugin = require("imagemin-webpack");
+
 const path = require('path');
 const isDevelopment = process.env.MODE == 'production' ? false : true;
 
@@ -7,7 +11,8 @@ module.exports = {
   target: "web",
   output: {
     path: path.resolve(__dirname, 'public'),
-    publicPath: '/'
+    publicPath: '/',
+    filename: isDevelopment ? '[name].js' : '[name].[contenthash].js'
   },
   module: {
     rules: [
@@ -88,10 +93,68 @@ module.exports = {
       filename: "./index.html"
     }),
     new MiniCssExtractPlugin({
-      filename: isDevelopment ? '[name].css' : '[name].[hash].css',
-      chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
+      filename: isDevelopment ? '[name].css' : '[name].[contenthash].css',
+      chunkFilename: isDevelopment ? '[id].css' : '[id].[contenthash].css'
+    }),
+    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true
+    }),
+    new WebpackPwaManifest({
+      name: 'Simone Aronica | Web Portfolio',
+      short_name: 'Simone Aronica',
+      description: 'My awesome Progressive Web App!',
+      background_color: '#fff',
+      icons: [
+        {
+          src: path.resolve('src/images/android-icon-144x144.png'),
+          sizes: [144]
+        },
+        {
+          src: path.resolve('src/images/android-icon-192x192.png'),
+          sizes: [144]
+        }
+      ]
+    }),
+    new ImageminPlugin({
+      bail: false, // Ignore errors on corrupted images
+      cache: true,
+      imageminOptions: {
+        // Before using imagemin plugins make sure you have added them in `package.json` (`devDependencies`) and installed them
+ 
+        // Lossless optimization with custom option
+        // Feel free to experiment with options for better result for you
+        plugins: [
+          ["gifsicle", { interlaced: true }],
+          ["jpegtran", { progressive: true }],
+          ["optipng", { optimizationLevel: 5 }],
+          [
+            "svgo",
+            {
+              plugins: [
+                {
+                  removeViewBox: false
+                }
+              ]
+            }
+          ]
+        ]
+      }
     })
   ],
+  optimization: isDevelopment ? {} : {
+    moduleIds: 'hashed',
+    runtimeChunk: 'single',
+    splitChuncks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    }
+  },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,

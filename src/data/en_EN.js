@@ -96,8 +96,19 @@ const timeline = (
   ]
 );
 
+const nav = (
+  [
+    {
+      "text": "Blog",
+      "href": "/blog"
+    }
+  ]
+);
+
 module.exports = {
     about,
     projects,
-    timeline
+    timeline,
+    nav,
+    lang: "en"
 };

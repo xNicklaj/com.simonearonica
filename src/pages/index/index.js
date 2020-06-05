@@ -2,17 +2,19 @@ import React, {useContext} from 'react';
 import {motion} from 'framer-motion';
 import {MDCard, MDCardSection, MDDivider} from 'react-md-components';
 import {Helmet} from 'react-helmet';
+import loadable from "@loadable/component";
 
 import style from './index.module.scss';
 import light from './index.light.palette.module.scss';
 import dark from './index.dark.palette.module.scss';
 import palettes from '../../global.palettes.scss';
-import Card from '../../components/card/card';
+const Card = loadable(() => import("../../components/card/card"));
 import Timeline from '../../components/timeline/timeline';
 
-import {openLink} from '../../functions/common';
+import {openLink, generateKey} from '../../functions/common';
 import {ColorScheme} from '../../theme';
 import {AssetContainer} from '../../assets';
+import {DataContext} from '../../data';
 
 import avatar from '../../images/avatar.png';
 import GmailIcon from '../../icons/gmail';
@@ -27,7 +29,6 @@ import CSS3Icon from '../../icons/css3-original';
 import JavascriptIcon from '../../icons/javascript-original';
 import PhpIcon from '../../icons/php';
 import ReactIcon from '../../icons/react-original';
-import data from '../../data/en_EN';
 
 export const IndexPage = () => {
   const theme = useContext(ColorScheme).theme;
@@ -36,6 +37,7 @@ export const IndexPage = () => {
 
   const images = useContext(AssetContainer).images;
   const icons = useContext(AssetContainer).icons;
+  const content = useContext(DataContext).content;
   return <>
     <Helmet>
       <title>Home | Simone Aronica</title>
@@ -47,6 +49,21 @@ export const IndexPage = () => {
       <meta property='og:description' content="This is a web portfolio. Hi, I'm Simone Aronica and I'm your friendly neighbourhood junior developer." />
     </Helmet>
     <header className={`${style.header} ${palette.header}`}>
+      <nav>
+        <ul className={style.navlist}>
+          {
+            content.nav.map(elem => <li key={generateKey()} className={style.navitem}><a className={style.navlink} href={elem.href}>{elem.text}</a></li>)
+          }
+        </ul>
+      </nav>
+      <main>
+        <motion.h1 animate={{x:-48}} transition={{duration: .25, type: "spring"}}>
+          Hello, I&apos;m Simone
+        </motion.h1>
+        <motion.h1 animate={{x: 48}} transition={{duration: .25, type: "spring"}}>
+          I like to develop stuff.
+        </motion.h1>
+      </main>
       <ul className={style.iconlist}>
         <motion.li 
           whileHover={{rotate: 360}} 
@@ -77,14 +94,6 @@ export const IndexPage = () => {
           <GmailIcon />
         </motion.li>
       </ul>
-      <main>
-        <motion.h1 animate={{x:-64}} transition={{duration: .25, type: "spring"}}>
-          Hello, I&apos;m Simone
-        </motion.h1>
-        <motion.h1 animate={{x: 64}} transition={{duration: .25, type: "spring"}}>
-          I like to develop stuff.
-        </motion.h1>
-      </main>
     </header>
     <div className={`${style.main} ${palette.main}`}>
       <section>
@@ -104,25 +113,26 @@ export const IndexPage = () => {
         <h1 style={{color: theme == 'dark' ? palettes.textColorDark : palettes.textColorLight }}>My projects</h1>
         <ul className={style.projects}>
           {
-            data.projects.map(elem => {
-              return <MDCard 
-              key={elem.key} 
-              media={elem.thumbnail ? images[`${elem.thumbnail}`.toString()].default : ''}
-              title={elem.title}
-              accentColor={palettes.accentcolor}
-              className={style.MDCard}
-              dark={theme == 'dark' ? true : false}
-              actions={elem.links.map(link => {
+            content.projects.map(elem => {
+              return <li key={elem.key} >
+              <MDCard 
+                media={elem.thumbnail ? images[`${elem.thumbnail}`.toString()].default : ''}
+                title={elem.title}
+                accentColor={palettes.accentcolor}
+                className={style.MDCard}
+                dark={theme == 'dark' ? true : false}
+                actions={elem.links.map(link => {
                 return {
                   title: link.title,
                   onClick: () => openLink(link.link),
                   key: link.key
                 };
-              })}
+                })}
               >
                 <MDCardSection>{elem.description}</MDCardSection>
                 <MDDivider primaryColor={palettes.textColorDark} fullWidth/>
               </MDCard>;
+              </li>
             })
           }
         </ul>
@@ -131,10 +141,10 @@ export const IndexPage = () => {
         <h1 style={{color: theme == 'dark' ? palettes.textColorDark : palettes.textColorLight }}>About me and education</h1>
         <ul className={style.about}>
           <li>
-            <Card src={avatar} data={data.about.attributes} back={data.about.back} className={style.card}/>
+            <Card src={avatar} data={content.about.attributes} back={content.about.back} className={style.card}/>
           </li>
           <li>
-            <Timeline data={data.timeline} className={style.timeline}/>
+            <Timeline data={content.timeline} className={style.timeline}/>
           </li>
         </ul>
       </section>

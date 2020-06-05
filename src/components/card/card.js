@@ -17,7 +17,7 @@ export const Card = (props) => {
         <div className={`${style.cardFront} ${palette.cardFront}`}>
           <h2>Quick info ID Card</h2>
           <div className={`${style.IDCardcontent} ${palette.IDCardcontent}`}>
-            <img src={props.src}/>
+            <img src={props.src} alt={props.src}/>
             <div className={style.info}>
               {
                   props.data.map(elem => {
