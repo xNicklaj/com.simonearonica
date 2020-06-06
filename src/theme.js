@@ -4,13 +4,15 @@ const ColorScheme = React.createContext();
 
 class ColorSchemeProvider extends React.Component {
     state = {
-        theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        theme: sessionStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
     };
 
     listener;
 
     toggleTheme = () => {
-        this.setState({theme: this.invertTheme()});
+        const theme = this.invertTheme();
+        sessionStorage.setItem('theme', theme);
+        this.setState({theme: theme});
     };
 
     invertTheme = () => {
