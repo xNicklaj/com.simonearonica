@@ -10,11 +10,11 @@ class ColorSchemeProvider extends React.Component {
     listener;
 
     toggleTheme = () => {
-        this.setState({theme: this.invertTheme});
+        this.setState({theme: this.invertTheme()});
     };
 
     invertTheme = () => {
-        if(this.state.theme = 'light')
+        if(this.state.theme == 'light')
             return 'dark';
         else
             return 'light';

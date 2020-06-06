@@ -11,7 +11,8 @@ import palettes from '../../global.palettes.scss';
 const Card = loadable(() => import("../../components/card/card"));
 import Timeline from '../../components/timeline/timeline';
 
-import {openLink, generateKey} from '../../functions/common';
+
+import {openLink, generateKey, lightenDarkenColor} from '../../functions/common';
 import {ColorScheme} from '../../theme';
 import {AssetContainer} from '../../assets';
 import {DataContext} from '../../data';
@@ -97,7 +98,7 @@ export const IndexPage = () => {
     </header>
     <div className={`${style.main} ${palette.main}`}>
       <section>
-        <h1 style={{color: theme == 'dark' ? palettes.textColorDark : palettes.textColorLight }}>My Skills</h1>
+        <h1 className={palette.sectiontitle}>My Skills</h1>
         <ul className={`${style.skillList} ${palette.skillList}`}>
           <li><CIcon /></li>
           <li><CppIcon /></li>
@@ -110,7 +111,7 @@ export const IndexPage = () => {
         </ul>
       </section>
       <section>
-        <h1 style={{color: theme == 'dark' ? palettes.textColorDark : palettes.textColorLight }}>My projects</h1>
+        <h1 className={palette.sectiontitle}>My projects</h1>
         <ul className={style.projects}>
           {
             content.projects.map(elem => {
@@ -118,7 +119,7 @@ export const IndexPage = () => {
                 <MDCard 
                   media={elem.thumbnail ? images[`${elem.thumbnail}`.toString()].default : ''}
                   title={elem.title}
-                  accentColor={palettes.accentcolor}
+                  accentColor={palettes.accentColorDarkened}
                   className={style.MDCard}
                   dark={theme == 'dark' ? true : false}
                   actions={elem.links.map(link => {
@@ -132,13 +133,13 @@ export const IndexPage = () => {
                   <MDCardSection>{elem.description}</MDCardSection>
                   <MDDivider primaryColor={palettes.textColorDark} fullWidth/>
                 </MDCard>
-              </li>
+              </li>;
             })
           }
         </ul>
       </section>
       <section>
-        <h1 style={{color: theme == 'dark' ? palettes.textColorDark : palettes.textColorLight }}>About me and education</h1>
+        <h1 className={palette.sectiontitle}>About me and education</h1>
         <ul className={style.about}>
           <li>
             <Card src={avatar} data={content.about.attributes} back={content.about.back} className={style.card}/>

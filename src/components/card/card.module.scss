@@ -83,6 +83,8 @@
 .IDCardcontent .info div {
     max-width: 100%;
     display: flex;
+    word-wrap: break-word;
+    flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 768px) {

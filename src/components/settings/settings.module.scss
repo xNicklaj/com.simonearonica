@@ -1,0 +1,36 @@
+@import '../../global.scss';
+
+.settingsdiv {
+    position: fixed;
+    bottom: 0px;
+    @include box-shadow-idle;
+    z-index: 999;
+    width: calc(100vw - 32px);
+    padding: 16px;
+    height: 10rem;
+}
+
+.toggle {
+    background: #bdbdbd;
+    width: 50px;
+    height: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.settingscontent {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+}
+
+.settingscontent li {
+    display: flex;
+    align-items: center;
+}
+
+
