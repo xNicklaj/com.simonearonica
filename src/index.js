@@ -1,12 +1,11 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import {render} from 'react-dom';
 import {BrowserRouter, Route} from 'react-router-dom';
 import {ColorSchemeProvider} from './theme.js';
 import {AssetContainerProvider} from './assets.js'; 
 import {DataContextProvider} from './data.js'; 
 import {IndexPage} from './pages/index/index';
-import loadable from "@loadable/component";
-const Settings = loadable(() => import("./components/settings/settings"));
+const Settings = React.lazy(() => import("./components/settings/settings"));
 const css = require('./stylesheet.css').toString();
 
 const wrapper = document.getElementById("root");
@@ -14,15 +13,17 @@ wrapper ? render(
 <DataContextProvider>
     <ColorSchemeProvider>
         <AssetContainerProvider>
-            <BrowserRouter>
-                <Route exact path="/">
-                    <IndexPage />
-                </Route>
-                <Route exact path="/blog">
+            <Suspense fallback={<></>}>
+              <BrowserRouter>
+                  <Route exact path="/">
+                      <IndexPage />
+                  </Route>
+                  <Route exact path="/blog">
 
-                </Route>
-            </BrowserRouter>
-            <Settings />
+                  </Route>
+              </BrowserRouter>
+              <Settings />
+            </Suspense>
         </AssetContainerProvider>
     </ColorSchemeProvider>
 </DataContextProvider>, wrapper) : false;

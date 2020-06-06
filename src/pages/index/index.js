@@ -2,13 +2,12 @@ import React, {useContext} from 'react';
 import {motion} from 'framer-motion';
 import {MDCard, MDCardSection, MDDivider} from 'react-md-components';
 import {Helmet} from 'react-helmet';
-import loadable from "@loadable/component";
 
 import style from './index.module.scss';
 import light from './index.light.palette.module.scss';
 import dark from './index.dark.palette.module.scss';
 import palettes from '../../global.palettes.scss';
-const Card = loadable(() => import("../../components/card/card"));
+const Card = React.lazy(() => import("../../components/card/card"));
 import Timeline from '../../components/timeline/timeline';
 
 
