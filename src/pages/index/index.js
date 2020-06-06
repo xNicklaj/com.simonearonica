@@ -49,14 +49,14 @@ export const IndexPage = () => {
       <meta name="google-site-verification" content="lsXBUrY9LxRO6rdCsoCmoFsC-X6DKQHCc-twbZJnzh0" />
       <meta property='og:description' content="This is a web portfolio. Hi, I'm Simone Aronica and I'm your friendly neighbourhood junior developer." />
     </Helmet>
+    <nav style={{position: "sticky", top: 0, zIndex: 999}}>
+      <ul className={`${style.navlist} ${palette.navlist}`}>
+        {
+          content.nav.map(elem => <li key={generateKey()} className={`${style.navitem} ${palette.navitem}`}><a className={`${style.navlink} ${palette.navlink}`} href={elem.href}>{elem.text}</a></li>)
+        }
+      </ul>
+    </nav>
     <header className={`${style.header} ${palette.header}`}>
-      <nav>
-        <ul className={style.navlist}>
-          {
-            content.nav.map(elem => <li key={generateKey()} className={style.navitem}><a className={style.navlink} href={elem.href}>{elem.text}</a></li>)
-          }
-        </ul>
-      </nav>
       <main>
         <motion.h1 animate={{x:-48}} transition={{duration: .25, type: "spring"}}>
           Hello, I&apos;m Simone
