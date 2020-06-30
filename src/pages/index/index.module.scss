@@ -123,8 +123,7 @@ section h1 {
 
 @media only screen and (min-width: 1250px) {
     section .projects {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-auto-flow: column;
+        grid-template-columns: repeat(auto-fit, minmax(25vw, 1fr));
     }
 
     .header {
