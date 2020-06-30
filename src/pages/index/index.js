@@ -10,7 +10,7 @@ import palettes from '../../global.palettes.scss';
 const Card = React.lazy(() => import("../../components/card/card"));
 import Timeline from '../../components/timeline/timeline';
 
-import {openLink, generateKey} from '../../functions/common';
+import {openLink} from '../../functions/common';
 import {ColorScheme} from '../../theme';
 import {AssetContainer} from '../../assets';
 import {DataContext} from '../../data';

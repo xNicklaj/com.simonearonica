@@ -118,6 +118,10 @@ const nav = (
     {
       "text": "Blog",
       "href": "/blog"
+    },
+    {
+      "text": "Portfolio",
+      "href": "/"
     }
   ]
 );
