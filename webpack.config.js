@@ -1,8 +1,10 @@
+/* eslint-disable no-undef */
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const ImageminPlugin = require("imagemin-webpack");
+const CopyPlugin = require('copy-webpack-plugin');
 
 const path = require('path');
 const isDevelopment = process.env.MODE == 'production' ? false : true;
@@ -140,7 +142,12 @@ module.exports = {
           ]
         ]
       }
-    })
+    }),
+    new CopyPlugin({
+      patterns: [
+        {from: path.resolve(__dirname, "_redirects"), to: "."}
+      ],
+    }),
   ],
   optimization: isDevelopment ? {} : {
     moduleIds: 'hashed',
@@ -161,5 +168,5 @@ module.exports = {
     port: 8000,
     historyApiFallback: true,
     host: '192.168.1.154' || 'tower'
-  }
+  },
 };
