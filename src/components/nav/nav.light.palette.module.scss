@@ -1,16 +1,9 @@
 @import '../../global.palettes.scss';
 
-.header {
-    background-color: $accent-color;
-}
-
-.main {
+.navlist {
     background-color: $bg-color-light;
 }
 
-.sectiontitle {
+.navlink, .navlink:visited{
     color: $text-color-light;
 }
-
-
-

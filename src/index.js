@@ -6,7 +6,9 @@ import {ColorSchemeProvider} from './theme.js';
 import {AssetContainerProvider} from './assets.js'; 
 import {DataContextProvider} from './data.js'; 
 import {IndexPage} from './pages/index/index';
+import {BlogPage} from './pages/blog/blog';
 const Settings = React.lazy(() => import("./components/settings/settings"));
+const Nav = React.lazy(() => import("./components/nav/nav"));
 // eslint-disable-next-line no-unused-vars
 const css = require('./stylesheet.css').toString();
 
@@ -16,12 +18,13 @@ wrapper ? render(
     <ColorSchemeProvider>
         <AssetContainerProvider>
             <Suspense fallback={<></>}>
+              <Nav />
               <BrowserRouter>
                   <Route exact path="/">
-                      <IndexPage />
+                    <IndexPage />
                   </Route>
                   <Route exact path="/blog">
-
+                    <BlogPage />
                   </Route>
               </BrowserRouter>
               <Settings />

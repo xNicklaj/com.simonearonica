@@ -5,8 +5,8 @@ import {MDButton} from 'react-md-components';
 
 import palettes from '../../global.palettes.scss';
 import style from './settings.module.scss';
-import dark from './settings.dark.module.scss';
-import light from './settings.light.module.scss';
+import dark from './settings.dark.palette.module.scss';
+import light from './settings.light.palette.module.scss';
 
 const variants = {
     open: {y: '1rem'},
