@@ -78,8 +78,25 @@ const projects = (
                   "link": "https://github.com/xNicklaj/minIRC"
               }
           ]  
-      }
-
+      },
+      {
+        "key": 3,
+        "title": "react-md-components",
+        "thumbnail": "react-md-components.png",
+        "description": "A simple react framework that replicates the behaviour of material components, without adding too much complexity to the code. For those who want the result without having to inject thousands of instructions into their code. This website uses react-md-components.",
+        "links": [
+            {
+                "key": 0,
+                "title": "View hosted",
+                "link": "https://xnicklaj.github.io/react-md-components"
+            },
+            {
+                "key": 1,
+                "title": "View source",
+                "link": "https://github.com/xNicklaj/react-md-components"
+            }
+        ]  
+    }
   ]
 );
 

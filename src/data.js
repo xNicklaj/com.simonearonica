@@ -1,12 +1,12 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
-import content from './data/en_EN';
+import en from './data/en_EN';
 
 const DataContext = React.createContext();
 
 class DataContextProvider extends React.Component {
     state = {
-        content: content,
+        content: en
     };
 
     render() {
