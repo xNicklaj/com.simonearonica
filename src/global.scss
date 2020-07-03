@@ -8,10 +8,6 @@ body::-webkit-scrollbar {
     font-family: 'Biko Regular';
 }
 
-body::-webkit-scrollbar-thumb {
-    border-radius: 1em;
-}
-
 h1 {
     font-family: 'Biko Bold';
     font-display: optional; 
@@ -44,6 +40,7 @@ h2, h3, p {
     -moz-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
+
 
 @mixin box-shadow-transparent {
     -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0), 0 10px 10px rgba(0,0,0,0);

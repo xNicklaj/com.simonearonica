@@ -21,4 +21,17 @@
     color: $text-color-dark;
 }
 
+@media (prefers-color-scheme: dark) {
+    body {
+        background: $bg-color-dark;
+    }
+
+    body::-webkit-scrollbar-track {
+        background: $bg-color-dark-elevated-1dp;
+    }
+    
+    body::-webkit-scrollbar-thumb {
+        background: $bg-color-dark-elevated-8dp;
+    }
+}
 

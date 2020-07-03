@@ -12,5 +12,17 @@
     color: $text-color-light;
 }
 
+@media (prefers-color-scheme: light) {
+    body {
+        background: $bg-color-light;
+    }
 
+   body::-webkit-scrollbar-track {
+       background: #e0e0e0;
+   }
 
+   body::-webkit-scrollbar-thumb {
+       background: $bg-color-light;
+       box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   }
+}
