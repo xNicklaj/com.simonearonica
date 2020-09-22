@@ -96,6 +96,19 @@ const projects = (
                 "link": "https://github.com/xNicklaj/react-md-components"
             }
         ]  
+    },
+    {
+	"key": 4,
+	"title": "ps-setup",
+	"thumbnail": "",
+	"description": "This is a tool in powershell that I've made mostly for myself, but then decided to share to the public. It aims to automate the installation process of many common softwares via chocolatey.",
+	"links": [
+		{
+			"key": 0,
+			"title": "View source",
+			"link": "https://github.com/xNicklaj/ps-setup"
+		}
+	]
     }
   ]
 );
