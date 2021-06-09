@@ -1,0 +1,60 @@
+@import './global.palettes.scss';
+
+.textDiv h2{
+    color: $text-color-light;
+}
+
+.timeline {
+    border-left: 8px solid $accent-color;
+    color: $text-color-light;
+}
+
+.timeline li {
+    
+}
+
+.timeline li:after {
+    box-shadow: 0 0 0 8px $accent-color;
+    background: $bg-color-light;
+}
+
+@media (prefers-color-scheme: light) {
+    .wip {
+        background: $bg-color-light;
+    }
+
+    .timeline {
+        color: $text-color-light;
+    }
+
+    .timeline li:after {
+        background: $bg-color-light;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .wip {
+        background: $bg-color-dark;
+    }
+
+    .timeline {
+        color: $text-color-dark;
+        background: $bg-color-dark-elevated-1dp;
+    }
+
+    .timeline:hover {
+        background: $bg-color-dark-elevated-8dp;
+    }
+
+    .timeline:hover li{
+        background: $bg-color-dark-elevated-8dp;
+    }
+
+    .timeline li{
+        background: $bg-color-dark-elevated-1dp;
+    }
+
+    .timeline li:after {
+        background: $bg-color-dark;
+    }
+}

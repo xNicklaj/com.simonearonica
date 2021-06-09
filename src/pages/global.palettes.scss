@@ -1,0 +1,49 @@
+$bg-color-light: #f1f1f1;
+$bg-color-dark: #121212;
+$bg-color-dark-elevated-1dp: #181818;
+$bg-color-dark-elevated-8dp: #292929;
+$accent-color: #F9E96A;
+$text-color-light: #1f1f1f;
+$text-color-dark: #f1f1f1;
+
+body {
+    background: $bg-color-light;
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background: $bg-color-light;
+    }
+
+   body::-webkit-scrollbar-track {
+       background: #e0e0e0;
+   }
+
+   body::-webkit-scrollbar-thumb {
+       background: $bg-color-light;
+       box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   }
+
+    h1, h2, h3, p {
+        color: $text-color-light;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: $bg-color-dark;
+    }
+
+    body::-webkit-scrollbar-track {
+        background: $bg-color-dark-elevated-1dp;
+    }
+    
+    body::-webkit-scrollbar-thumb {
+        background: $bg-color-dark-elevated-8dp;
+    }
+
+    h1, h2, h3, p {
+        color: $text-color-dark;
+    }
+
+}

@@ -1,0 +1,207 @@
+@import './global.palettes.scss';
+
+.wip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5em;
+    background-color: $bg-color-light;
+}
+
+.pjgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 3em;
+    grid-column-gap: 3em;
+    width: 95%;
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    background: #000;
+    opacity: .12;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+h1 {
+    font-size: 50px;
+    opacity: .8;
+}
+
+.avatarDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20em;
+}
+
+.avatarDiv img {
+    border-radius: 50%;
+    height: 100%;
+    width: auto;
+}
+
+.textDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 3rem;
+}
+
+.textDiv h2 {
+    margin: .5rem;
+    letter-spacing: .2rem;
+}
+
+.textDiv h2:nth-child(1) {
+    transform: translateX(-6rem)
+}
+
+.textDiv h2:nth-child(2) {
+    transform: translateX(6rem)
+}
+
+.skillcardWrapper {
+    height: 7rem;
+    width: 33%;
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-around
+}
+
+.aboutMe {
+    display: flex;
+    width: 95%; 
+}
+
+/* Timeline base */
+section.timeline-outer {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1.header {
+    font-size: 50px;
+    line-height: 70px;
+}
+
+/* timeline css */
+.timeline {
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin: 50px auto;
+    letter-spacing: 0.5px;
+    position: relative;
+    line-height: 1.4em;
+    padding: 20px;
+    max-width: 30vw;
+    list-style: none;
+    text-align: left;
+    transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1), background-color 0.3s cubic-bezier(.25, .8, .25, 1);
+    margin-left: 2em;
+}
+
+.timeline:hover {
+    -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    -moz-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.timeline li {
+    border-bottom: 1px solid rgba(160, 160, 160, 0.2);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s cubic-bezier(.25, .8, .25, 1);
+    position: relative;
+}
+
+.timeline h1 {
+    font-size: 24px;
+}
+
+.timeline p {
+    font-size: 20px;
+    line-height: 1.25em;
+}
+
+.timeline li:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.timeline li:before,
+.timeline li:after {
+    position: absolute;
+    display: block;
+    top: 0;
+}
+
+.timeline li:after {
+    left: -30px;
+    border-radius: 50%;
+    height: 11px;
+    width: 11px;
+    content: "";
+    top: 5px;
+}
+
+
+@media (max-width: 750px){
+    .textDiv {
+        font-size: 14px;
+    }
+
+    .textDiv  h2 {
+        margin: .5rem;
+        letter-spacing: .1rem;
+    }
+
+    .textDiv h2:nth-child(1) {
+        transform: translateX(0)
+    }
+    
+    .textDiv h2:nth-child(2) {
+        transform: translateX(0)
+    }
+
+    .pjgrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 3em;
+        grid-column-gap: 3em;
+        width: 95%;
+    }
+
+    .skillcardWrapper {
+        width: 85%;
+    }
+
+    .wip {
+        margin: 1em;
+        margin-top: 7em;
+    }
+
+    div h1 {
+        margin: .3em;
+    }
+
+    .aboutMe {
+        flex-direction: column;
+    }
+
+    .timeline {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100vw;
+    }
+}
